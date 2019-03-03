@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mnzit.triviaapp.controller;
+package com.mnzit.triviaapp.web.controller;
 
 import com.mnzit.triviaapp.web.dao.UserDAO;
 import com.mnzit.triviaapp.web.dao.impl.UserDAOFileImpl;
@@ -57,9 +57,9 @@ public class HomeController extends Controller {
                 if (i > 0) {
                     request.getSession(true).setAttribute("username", username);
                     request.getSession(true).setAttribute("id", i);
-                    response.sendRedirect(request.getContextPath() + "/home");
+                    response.sendRedirect(request.getContextPath() + "/question");
                 } else {
-                    response.sendRedirect(request.getContextPath() + "/home?error");
+                    response.sendRedirect(request.getContextPath() + "/login?error");
                 }
             } else {
                 userDAO.register(username, password);

@@ -7,8 +7,8 @@ package com.mnzit.triviaapp.web.dao.impl;
 
 import com.mnzit.triviaapp.web.dao.QuestionDAO;
 import com.mnzit.triviaapp.web.entity.Question;
-import com.mnzit.triviaapp.web.filehelper.FileManipulater;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,8 +25,11 @@ public class QuestionDAOFileImpl implements QuestionDAO {
     public List<Question> getAll() throws Exception {
         List<Question> question = new ArrayList<>();
         String line = "";
-//        FileManipulater reader = new FileManipulater("d:/trivia.txt");
-        BufferedReader reader = new BufferedReader(new FileReader("d:/trivia.txt"));
+        File f = new File("d:/trivia.txt");
+        if (!f.exists()) {
+            f.createNewFile();
+        }
+        BufferedReader reader = new BufferedReader(new FileReader(f));
         while ((line = reader.readLine()) != null) {
             String[] tokens = line.split(":");
             if (tokens.length == 7) {

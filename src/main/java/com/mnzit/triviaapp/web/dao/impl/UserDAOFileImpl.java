@@ -62,7 +62,6 @@ public class UserDAOFileImpl implements UserDAO {
 
     @Override
     public boolean updateScore(int score, int id) throws Exception {
-        List<User> users = new ArrayList<>();
         String line = "";
         int i = 0;
         long oldPosition = 0;

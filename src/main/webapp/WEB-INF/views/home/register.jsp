@@ -13,7 +13,7 @@
           <form class="form-signin" method="post">
             <input type="text" name="username" class="form-control mb-2" placeholder="Email" required autofocus>
             <input type="password" name="password" class="form-control mb-2" placeholder="Password" required>
-            <button class="btn btn-lg btn-primary btn-block mb-1" type="submit">Sign in</button>
+            <button class="btn btn-lg btn-primary btn-block mb-1" type="submit">Register</button>
           </form>
         </div>
       </div>
